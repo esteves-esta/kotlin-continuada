@@ -22,6 +22,8 @@ Crie um app Android o qual:
 Aplicativo para visualizar sonhos de pessoas do mundo inteiro. Você também pode adicionar seu sonho e categoriza-lo em 3 tipos.
 
 ## Gif do aplicativo em funcionamento
+![gif do aplicatio](https://github.com/esteves-esta/kotlin-continuada/blob/main/mockups/gif-app.gif)
 
 
 ## Mockups realizado no figma
+![gif do mockup](https://github.com/esteves-esta/kotlin-continuada/blob/main/mockups/gif-mockups.gif)
