@@ -11,7 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import fernanda.esteves.projetoac2.adapters.DreamAdapter
 import fernanda.esteves.projetoac2.models.Dream
+import fernanda.esteves.projetoac2.services.Api
+import fernanda.esteves.projetoac2.services.Rotas
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         listaSonhosDados.observe(this, Observer { linhas ->
             linhas?.let {
-                rv_listaSonhos?.visibility = View.VISIBLE
+                container_conteudo?.visibility = View.VISIBLE
                 listaAdapter.update(it)
             }
         })
@@ -83,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 loading_view.visibility = if (it) View.VISIBLE else View.GONE
                 if (it) {
                     list_error.visibility = View.GONE
-                    rv_listaSonhos?.visibility = View.GONE
+                    container_conteudo?.visibility = View.GONE
                 }
             }
         })
@@ -93,26 +98,24 @@ class MainActivity : AppCompatActivity() {
     private fun consumirApi() {
         loading.value = true;
 
-        //val service: Api = HttpHelper().getApiClient()!!.create(Api::class.java)
-//        val lista: Call<List<Dream>> = service.getDreams()
-//
-//        lista.enqueue(object : Callback<List<Dream>> {
-//            override fun onFailure(call: Call<List<Dream>>, t: Throwable) {
-//                loadError.value = true;
-//                loading.value = false;
-//
-//                println("deu ruim = ${t.message}")
-//            }
-//
-//            override fun onResponse(call: Call<List<Dream>>, response: Response<List<Dream>>) {
-//                listaSonhosDados.value = response.body()?.toList()
-                  listaSonhosDados.value = temp;
-//                loadError.value = false;
-//                loading.value = false;
-//
-//                println("status code = ${response.code()}")
-//            }
-//        })
-        loading.value = false;
+        val service: Rotas = Api().getApiClient()!!.create(Rotas::class.java)
+        val lista: Call<List<Dream>> = service.getAll()
+
+        lista.enqueue(object : Callback<List<Dream>> {
+            override fun onFailure(call: Call<List<Dream>>, t: Throwable) {
+                loadError.value = true;
+                loading.value = false;
+
+                println("deu ruim = ${t.message}")
+            }
+
+            override fun onResponse(call: Call<List<Dream>>, response: Response<List<Dream>>) {
+                listaSonhosDados.value = response.body()?.toList()?.reversed()
+                loadError.value = false;
+                loading.value = false;
+
+                println("status code = ${response.code()}")
+            }
+        })
     }
 }

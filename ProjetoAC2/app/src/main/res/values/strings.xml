@@ -14,4 +14,7 @@
     <string name="add_your_dream_title">Adicionar seu sonho</string>
     <string name="add">Adicionar</string>
     <string name="go_back_description">voltar para tela inicial</string>
+    <string name="empty_field">Preencha o campo %1$s</string>
+    <string name="save_error">Erro ao salvar seus dados</string>
+    <string name="carregando">Carregando</string>
 </resources>
