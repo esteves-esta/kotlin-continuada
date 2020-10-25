@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">ProjetoAC2</string>
+    <string name="app_name">Sonhos</string>
+    <string name="first_screen_title">Sonhos</string>
+    <string name="add_dream">Adicione um sonho</string>
+    <string name="explanation">Veja sonhos do mundo inteiro</string>
+    <string name="load_error">Erro ao carregar lista</string>
+    <string name="label_title">Titulo</string>
+    <string name="label_description">Descrição</string>
+    <string name="label_dreamtype">Tipo do sonho</string>
+    <string name="add_your_dream">Adicione seu sonho</string>
+    <string name="dream_type_3">Salvador Dali</string>
+    <string name="dream_type_2">Pesadelo</string>
+    <string name="dream_type_1">Normal</string>
+    <string name="add_your_dream_title">Adicionar seu sonho</string>
+    <string name="add">Adicionar</string>
+    <string name="go_back_description">voltar para tela inicial</string>
 </resources>

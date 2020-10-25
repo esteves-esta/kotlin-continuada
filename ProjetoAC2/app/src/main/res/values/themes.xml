@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ProjetoAC2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.ProjetoAC2" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/dark</item>
+        <item name="colorOnPrimary">@color/light</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -12,5 +12,78 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.App.OutlineButton</item>
     </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="Widget.App.OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+
+    <style name="Titulo" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/light</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/open_sans_extrabold</item>
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+
+    <style name="Texto" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/light</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="TextoItalico" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/light</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">@font/open_sans_bold_italic</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <!--  LABEL DO CAMPO DE TEXTO  -->
+    <style name="Label">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/medium</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <!--  CARD  -->
+    <style name="CardStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:backgroundTint">@color/light</item>
+        <item name="android:padding">25dp</item>
+    </style>
+
+    <!--  CAMPO DE TEXTO  -->
+    <!--    https://www.youtube.com/watch?v=BO5iCL7U6Lc -->
+    <style name="Input">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:padding">15sp</item>
+        <item name="android:background">@drawable/custom_input</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
 </resources>
